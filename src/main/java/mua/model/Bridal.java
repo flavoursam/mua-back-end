@@ -1,30 +1,32 @@
 package mua.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+//import javax.persistence.Entity;
+//import javax.persistence.Id;
 import java.time.LocalTime;
 import java.util.Date;
 import java.util.UUID;
 
-@Entity
-public class BridalBooking {
+//@Entity
+public class Bridal {
 
-    @Id
-    private UUID id;
+//    @Id
+    private int id;
     private String firstName;
     private String lastName;
-    private long number;
+    private String number;
     private String email;
     private String address;
-    private Date date;
-    private LocalTime timeOfCeremony;
-    private LocalTime arrivalTimeOfPhotographer;
+    private String date;
+    private String timeOfCeremony;
+    private String arrivalTimeOfPhotographer;
     private int bride;
     private int numOfBridesmaids;
     private boolean motherOfBride;
     private String other;
 
-    public BridalBooking(UUID id, String firstName, String lastName, long number, String email, String address, Date date, LocalTime timeOfCeremony, LocalTime arrivalTimeOfPhotographer, int bride, int numOfBridesmaids, boolean motherOfBride) {
+    public Bridal(){}
+
+    public Bridal(int id, String firstName, String lastName, String number, String email, String address, String date, String timeOfCeremony, String arrivalTimeOfPhotographer, int bride, int numOfBridesmaids, boolean motherOfBride) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -39,11 +41,11 @@ public class BridalBooking {
         this.motherOfBride = motherOfBride;
     }
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -63,11 +65,11 @@ public class BridalBooking {
         this.lastName = lastName;
     }
 
-    public long getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(long number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -87,27 +89,27 @@ public class BridalBooking {
         this.address = address;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public LocalTime getTimeOfCeremony() {
+    public String getTimeOfCeremony() {
         return timeOfCeremony;
     }
 
-    public void setTimeOfCeremony(LocalTime timeOfCeremony) {
+    public void setTimeOfCeremony(String timeOfCeremony) {
         this.timeOfCeremony = timeOfCeremony;
     }
 
-    public LocalTime getArrivalTimeOfPhotographer() {
+    public String getArrivalTimeOfPhotographer() {
         return arrivalTimeOfPhotographer;
     }
 
-    public void setArrivalTimeOfPhotographer(LocalTime arrivalTimeOfPhotographer) {
+    public void setArrivalTimeOfPhotographer(String arrivalTimeOfPhotographer) {
         this.arrivalTimeOfPhotographer = arrivalTimeOfPhotographer;
     }
 

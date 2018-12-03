@@ -1,11 +1,18 @@
-package mua.repo;
-
-import mua.model.BridalBooking;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-
-import java.util.UUID;
-
-@Repository
-public interface BridalRepo extends JpaRepository<BridalBooking, UUID> {
-}
+//package mua.repo;
+//
+//import mua.model.Bridal;
+//import org.springframework.data.jpa.repository.JpaRepository;
+//import org.springframework.stereotype.Repository;
+//
+//import java.util.List;
+//import java.util.UUID;
+//
+//@Repository
+//public interface BridalRepo extends JpaRepository<Bridal, UUID> {
+//
+//    @Override
+//    Bridal getOne(UUID uuid);
+//
+//    @Override
+//    List<Bridal> findAll();
+//}
