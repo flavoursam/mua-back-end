@@ -1,33 +1,56 @@
-package mua.model;
+package mua.models;
 
-//import javax.persistence.Entity;
-//import javax.persistence.Id;
-import java.time.LocalTime;
-import java.util.Date;
-import java.util.UUID;
+import javax.persistence.*;
+import java.math.BigInteger;
 
-//@Entity
+
+@Entity
+@Table(name = "bridal")
 public class Bridal {
 
-//    @Id
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer id;
+
+    @Column(name = "firstName")
     private String firstName;
+
+    @Column(name = "lastName")
     private String lastName;
-    private String number;
+
+    @Column(name = "number")
+    private BigInteger number;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "address")
     private String address;
+
+    @Column(name = "date")
     private String date;
+
+    @Column(name = "timeOfCeremony")
     private String timeOfCeremony;
+
+    @Column(name = "arrivalTimeOfPhotographer")
     private String arrivalTimeOfPhotographer;
+
+    @Column(name = "bride")
     private int bride;
+
+    @Column(name = "numOfBridesmaids")
     private int numOfBridesmaids;
+
+    @Column(name = "motherOfBride")
     private boolean motherOfBride;
+
+    @Column(name = "other")
     private String other;
 
     public Bridal(){}
 
-    public Bridal(int id, String firstName, String lastName, String number, String email, String address, String date, String timeOfCeremony, String arrivalTimeOfPhotographer, int bride, int numOfBridesmaids, boolean motherOfBride) {
-        this.id = id;
+    public Bridal(String firstName, String lastName, BigInteger number, String email, String address, String date, String timeOfCeremony, String arrivalTimeOfPhotographer, int bride, int numOfBridesmaids, boolean motherOfBride, String other) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.number = number;
@@ -39,13 +62,14 @@ public class Bridal {
         this.bride = bride;
         this.numOfBridesmaids = numOfBridesmaids;
         this.motherOfBride = motherOfBride;
+        this.other = other;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -65,11 +89,11 @@ public class Bridal {
         this.lastName = lastName;
     }
 
-    public String getNumber() {
+    public BigInteger getNumber() {
         return number;
     }
 
-    public void setNumber(String number) {
+    public void setNumber(BigInteger number) {
         this.number = number;
     }
 
