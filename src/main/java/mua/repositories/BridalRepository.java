@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface BridalRepository extends CrudRepository<Bridal, Integer> {
 
-    List<Bridal> findByFirstName(String firstName);
+    // List<Bridal> findByFirstName(String firstName);
 
 }

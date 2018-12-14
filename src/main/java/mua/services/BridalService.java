@@ -12,6 +12,6 @@ public interface BridalService {
 
     void makeBooking(Bridal bridal);
 
-    Bridal getByFirstName(String firstName);
+    // Bridal getByFirstName(String firstName);
 
 }

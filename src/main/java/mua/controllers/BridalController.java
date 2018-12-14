@@ -26,10 +26,10 @@ public class BridalController {
     }
 
     // get bridal booking by first name
-    @GetMapping("/{firstName}")
-    public Bridal getByFirstName(@PathVariable String firstName){
-        return bridalServiceImpl.getByFirstName(firstName);
-    }
+    // @GetMapping("/{firstName}")
+    // public Bridal getByFirstName(@PathVariable String firstName){
+    //     return bridalServiceImpl.getByFirstName(firstName);
+    // }
 
     // create bridal booking
     @PostMapping(value = "/booking")

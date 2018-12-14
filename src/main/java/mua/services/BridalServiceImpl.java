@@ -18,7 +18,6 @@ public class BridalServiceImpl implements BridalService {
     @Autowired
     public BridalServiceImpl(BridalRepository productRepository) {
         this.bridalRepository = productRepository;
-//        this.productFormToProduct = productFormToProduct;
     }
 
 
@@ -36,13 +35,13 @@ public class BridalServiceImpl implements BridalService {
     }
 
 
-    public Bridal getByFirstName(String firstName) {
-        List<Bridal> x = listAll();
-        for (int i = 0 ; i < x.size(); i++) {
-            if (x.get(i).getFirstName().equals(firstName)){
-                return x.get(i);
-            }
-        }
-        return null;
-    }
+    // public Bridal getByFirstName(String firstName) {
+    //     List<Bridal> x = listAll();
+    //     for (int i = 0 ; i < x.size(); i++) {
+    //         if (x.get(i).getFirstName().equals(firstName)){
+    //             return x.get(i);
+    //         }
+    //     }
+    //     return null;
+    // }
 }
