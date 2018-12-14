@@ -1,7 +1,7 @@
 package mua.services;
 
 import mua.models.Bridal;
-import mua.repositories.BridalRepository;
+import mua.jpa.BridalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

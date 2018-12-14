@@ -19,7 +19,7 @@ public class BridalController {
     private BridalServiceImpl bridalServiceImpl;
 
     // get all bridal bookings
-    @GetMapping("/all")
+    @GetMapping("/")
     public List<Bridal> getAllBridalBookings() {
         System.out.println("Getting all bridal bookings...");
         return bridalServiceImpl.listAll();
@@ -35,7 +35,6 @@ public class BridalController {
     @PostMapping(value = "/booking")
     public void makeBooking(@RequestBody Bridal bridal) {
         bridalServiceImpl.makeBooking(bridal);
-        return;
     }
 
 
