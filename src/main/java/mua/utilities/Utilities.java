@@ -4,7 +4,6 @@ import mua.models.Booking;
 import mua.models.requests.ScheduleBookingRequest;
 import mua.models.responses.BookedTime;
 import mua.models.responses.GetBookingsResponse;
-import mua.models.responses.ScheduleBookingResponse;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,25 +39,6 @@ public class Utilities {
         return responses;
     }
 
-    public static int monthMapper(String month) {
-        int result;
-        switch (month) {
-            case "jan":
-                result = 01;
-                break;
-            case "feb":
-                result = 02;
-                break;
-            case "dec":
-                result = 12;
-                break;
-            default:
-                result = 100;
-                break;
-        }
-        return result;
-    }
-
     public static Booking scheduleBookingHelper(ScheduleBookingRequest request, float start, float finish, int year, String month, int day) {
         Booking booking = new Booking();
         // convert start/finish to string
@@ -66,8 +46,12 @@ public class Utilities {
         // convert bookingDate to long
         booking.setStart(Float.toString(start));
         booking.setFinish(Float.toString(finish));
-        int m = Utilities.monthMapper(month);
-        String date = "" + year + m + day;
+
+        // month and day formatters
+        String m = Utilities.monthMapper(month);
+        String d = Utilities.dayPadder(day);
+
+        String date = "" + year + m + d;
         booking.setBookingDate(Long.parseLong(date));
 
         // set booking properties from request properties
@@ -77,5 +61,58 @@ public class Utilities {
         booking.setMobile(request.getMobile());
 
         return booking;
+    }
+
+    public static String dayPadder(int day) {
+        if (day < 10) {
+            return "0" + day;
+        }
+        return Integer.toString(day);
+    }
+
+    public static String monthMapper(String month) {
+        String result;
+        switch (month) {
+            case "jan":
+                result = "01";
+                break;
+            case "feb":
+                result = "02";
+                break;
+            case "march":
+                result = "03";
+                break;
+            case "april":
+                result = "04";
+                break;
+            case "may":
+                result = "05";
+                break;
+            case "june":
+                result = "06";
+                break;
+            case "july":
+                result = "07";
+                break;
+            case "aug":
+                result = "08";
+                break;
+            case "sep":
+                result = "09";
+                break;
+            case "oct":
+                result = "10";
+                break;
+            case "nov":
+                result = "11";
+                break;
+            case "dec":
+                result = "12";
+                break;
+            default:
+                result = "Default case.";
+                break;
+        }
+        return result;
     }
 }
