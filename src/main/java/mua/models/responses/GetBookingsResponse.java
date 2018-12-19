@@ -10,7 +10,10 @@ import java.util.List;
 @Getter
 @Setter
 public class GetBookingsResponse {
-    private String month;
+
+    private int year;
+    private int month;
     private int day;
     private List<BookedTime> bookedTimes;
+
 }

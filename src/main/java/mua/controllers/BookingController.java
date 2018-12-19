@@ -4,7 +4,10 @@ import mua.models.requests.ScheduleBookingRequest;
 import mua.models.responses.GetBookingsResponse;
 import mua.models.responses.ScheduleBookingResponse;
 import mua.services.BookingService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(BookingController.BOOKING)
@@ -12,13 +15,13 @@ public class BookingController {
 
     public final static String BOOKING = "/booking";
 
+    @Autowired
     private BookingService bookingService;
 
     @GetMapping
-    public GetBookingsResponse getBookings() {
+    public List<GetBookingsResponse> getBookings() {
         return bookingService.getBookings();
     }
-
 
     @PostMapping
     public ScheduleBookingResponse scheduleBooking(@RequestBody ScheduleBookingRequest request,

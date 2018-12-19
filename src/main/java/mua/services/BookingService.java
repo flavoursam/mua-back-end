@@ -3,6 +3,7 @@ package mua.services;
 import mua.jpa.BookingRepository;
 import mua.models.Booking;
 import mua.models.responses.GetBookingsResponse;
+import mua.utilities.Utilities;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +15,12 @@ public class BookingService {
     @Autowired
     private BookingRepository bookingRepository;
 
-    public GetBookingsResponse getBookings() {
+    public List<GetBookingsResponse> getBookings() {
         List<Booking> bookings = bookingRepository.findAll();
-        GetBookingsResponse response = new GetBookingsResponse();
 
-//        response.setBookedTimes(bookings.);
-
+        return Utilities.getBookingsHelper(bookings);
     }
+
+
+
 }
