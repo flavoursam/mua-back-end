@@ -30,11 +30,8 @@ public class BookingController {
                                                    @RequestParam int year,
                                                    @RequestParam String month,
                                                    @RequestParam int day) {
-        ScheduleBookingResponse response = new ScheduleBookingResponse();
-        response.setBookingId("<abc123>");
-        response.setResult("success.");
-
-        return response;
+//        ScheduleBookingResponse response = new ScheduleBookingResponse();
+        return bookingService.scheduleBooking(request, start, finish, year, month, day);
     }
 
 }

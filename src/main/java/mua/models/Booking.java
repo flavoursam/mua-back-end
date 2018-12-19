@@ -13,16 +13,14 @@ import java.util.UUID;
 public class Booking {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String bookingId;
-
+    private String firstName;
+    private String lastName;
     private long bookingDate;
-
     private String start;
-
     private String finish;
-
     private String email;
+    private String mobile;
 
     public Booking(){
         bookingId = UUID.randomUUID().toString();
