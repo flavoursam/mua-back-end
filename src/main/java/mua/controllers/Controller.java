@@ -17,9 +17,9 @@ public abstract class Controller {
 
     public abstract ScheduleBookingResponse scheduleBooking(ScheduleBookingRequest scheduleBookingRequest);
 
-    public abstract List<Interval> getDailyBookedTimes(String date);
+//    public abstract List<Interval> getDailyBookedTimes(String date);
 
-    public abstract List<Interval> getDailyAvailableTimes(String date);
+//    public abstract List<Interval> getDailyAvailableTimes(String date);
 
 
 }

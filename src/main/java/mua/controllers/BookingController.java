@@ -39,29 +39,29 @@ public class BookingController extends Controller implements Assembler {
         return AssemblerUtil.convertToScheduleBookingResponse(assembledBooking);
     }
 
-    @GetMapping("/booked/{date}")
-    @ResponseBody
-    public List<Interval> getDailyBookedTimes(@PathVariable("date") String date) {
-        List<Booking> bookings = bookingService.getBookings();
-        List<Interval> result = new ArrayList<>();
+//    @GetMapping("/booked/{date}")
+//    @ResponseBody
+//    public List<Interval> getDailyBookedTimes(@PathVariable("date") String date) {
+//        List<Booking> bookings = bookingService.getBookings();
+//        List<Interval> result = new ArrayList<>();
+//
+//        for (Booking booking : bookings) {
+//            Interval bookedTimes = AssemblerUtil.convertToTimeSlot(booking, date);
+//            if (bookedTimes != null) {
+//                result.add(bookedTimes);
+//            }
+//        }
+//
+//        return result;
+//    }
 
-        for (Booking booking : bookings) {
-            Interval bookedTimes = AssemblerUtil.convertToTimeSlot(booking, date);
-            if (bookedTimes != null) {
-                result.add(bookedTimes);
-            }
-        }
-
-        return result;
-    }
-
-    @GetMapping("/available/{date}")
-    @ResponseBody
-    public List<Interval> getDailyAvailableTimes(@PathVariable("date") String date) {
-        List<Interval> dailyBookedTimes = getDailyBookedTimes(date);
-
-        return AssemblerUtil.convertToAvailableTimes(dailyBookedTimes, date);
-    }
+//    @GetMapping("/available/{date}")
+//    @ResponseBody
+//    public List<Interval> getDailyAvailableTimes(@PathVariable("date") String date) {
+//        List<Interval> dailyBookedTimes = getDailyBookedTimes(date);
+//
+//        return AssemblerUtil.convertToAvailableTimes(dailyBookedTimes, date);
+//    }
 
 }
 
