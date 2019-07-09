@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalTime;
 import java.util.UUID;
 
 @Entity
@@ -16,9 +17,10 @@ public class Booking {
     private String bookingId;
     private String firstName;
     private String lastName;
-    private long bookingDate;
-    private String start;
-    private String finish;
+    private String bookingDate;
+    private LocalTime start;
+    @Column(name="`end`")
+    private LocalTime end;
     private String email;
     private String mobile;
 

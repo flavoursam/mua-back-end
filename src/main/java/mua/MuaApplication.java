@@ -9,4 +9,6 @@ public class MuaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MuaApplication.class, args);
 	}
+
+
 }

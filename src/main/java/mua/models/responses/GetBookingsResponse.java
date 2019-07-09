@@ -11,9 +11,7 @@ import java.util.List;
 @Setter
 public class GetBookingsResponse {
 
-    private int year;
-    private int month;
-    private int day;
-    private List<BookedTime> bookedTimes;
+    private String bookingDate;
+    private List<Interval> bookedTimes;
 
 }
